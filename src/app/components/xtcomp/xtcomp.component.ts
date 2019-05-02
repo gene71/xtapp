@@ -16,6 +16,7 @@ import { Terminal } from "xterm";
 export class XtcompComponent implements OnInit {
    public term: Terminal;
    container: HTMLElement;
+   
 
   constructor() { }
 
@@ -25,6 +26,16 @@ export class XtcompComponent implements OnInit {
     this.container = document.getElementById('terminal');
     this.term.open(this.container);
     this.term.writeln('Welcome to xterm.js');
+    // // No idea what this does
+    // this.term.winptyCompatInit();
+    // // Open the websocket connection to the backend
+    // const protocol = (location.protocol === 'https:') ? 'wss://' : 'ws://';
+    // const port = location.port ? `:${location.port}` : '';
+    // const socketUrl = `${protocol}${location.hostname}${port}/shell`;
+    // const socket = new WebSocket(socketUrl);
+    // // Attach the socket to the terminal
+    // socket.onopen = (ev) => { this.term.attach(socket); };
+    
   }
 
 }
